@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 
-const incomeSchema = new mongoose.Schema({
+const expenseSchema = new mongoose.Schema({
     title:{
         type: String,
         required: true,
@@ -37,6 +37,6 @@ const incomeSchema = new mongoose.Schema({
 }, {timestamps: true});
 
 // module.exports = db.model("income", incomeSchema);
-const income=  mongoose.model('income', incomeSchema);
+const expense=  mongoose.model('expense', expenseSchema);
 
-export default income
+export default expense 

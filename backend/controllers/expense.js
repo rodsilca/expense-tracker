@@ -1,11 +1,11 @@
-import income from "../models/incomeModel.js";
-// const incomeSchema = require("../models/incomeModel.js");
+import expense from "../models/expenseModel.js";
+// const expenseSchema = require("../models/expenseModel.js");
 
 
-const addIncome= async (req, res) =>{
+const addExpense= async (req, res) =>{
     const {title,type,amount,category, description, date} = req.body;
 
-    const incomes =  income({
+    const expenses =  expense({
         title,
         type,
         amount,
@@ -24,34 +24,34 @@ const addIncome= async (req, res) =>{
             return res.status(400).json({message: "The amount must be posivitive"});
         }
         
-        console.log(incomes);
+        console.log(expenses);
 
-        await incomes.save();
-        res.status(200).json({message: "Income added"});
+        await expenses.save();
+        res.status(200).json({message: "expense added"});
 
     } catch (error) {
        res.status(500).json({message: "server error"});
     }
 }
 
-const getIncomes = async (req,res) =>{
+const getExpenses = async (req,res) =>{
     try {
-        const incomes = await  income.find().sort({createdAt: -1});
-        console.log(incomes);
+        const expenses = await  expense.find().sort({createdAt: -1});
+        console.log(expenses);
 
-        res.status(200).json(incomes);
+        res.status(200).json(expenses);
     } catch (error) {
         console.log(error);
         res.status(500).json({message: "server error"});
     }
 }
 
-const deleteIncome = async (req,res) =>{
+const deleteExpense = async (req,res) =>{
     const id = req.params.id;
 
-    income.findByIdAndDelete(id)
-        .then((incomeOne)=>{
-            res.status(200).json({message: "Income deleted"});
+    expense.findByIdAndDelete(id)
+        .then((expenseOne)=>{
+            res.status(200).json({message: "expense deleted"});
         })
         .catch((error) =>{
             res.status(500).json({message: "server error"});
@@ -59,10 +59,10 @@ const deleteIncome = async (req,res) =>{
 }
 
 //build update
-// const updateIncome = async (req,res) =>{
+// const updateExpense = async (req,res) =>{
 //     const {id,title,type,amount,category, description, date} = req.body;
 
-//     const incomes =  income({
+//     const expenses =  expense({
 //         title,
 //         type,
 //         amount,
@@ -81,15 +81,15 @@ const deleteIncome = async (req,res) =>{
 //             return res.status(400).json({message: "The amount must be posivitive"});
 //         }
 
-//         income.findById(id).then((incomeOne) =>{
+//         expense.findById(id).then((expenseOne) =>{
 //             res.status(404).json({message: "User not found"})
 //         })
 
-//         res.status(200).json(incomes);
+//         res.status(200).json(expenses);
 //     } catch (error) {
 //         console.log(error);
 //         res.status(500).json({message: "server error"});
 //     }
 // }
 
- export {addIncome, getIncomes, deleteIncome}
+ export {addExpense, getExpenses, deleteExpense}
