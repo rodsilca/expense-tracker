@@ -15,13 +15,36 @@ export const GlobalProvider = ({children} )=>{
             .catch((err) =>{
                 setError(err.response.data.message);     
             })
-
-            
     } 
+
+    const getIncomes = async () => {
+        const response = await axios.get(`${BASE_URL}get-income`);
+        setIncomes(response.data);
+        console.log(response.data);
+    }
+
+    // const deleteIncome = async (id) => {
+    //     const res  = await axios.delete(`${BASE_URL}delete-income/${id}`);
+    //     getIncomes();
+    // }
+
+    // const totalIncome = () => {
+    //     let totalIncome = 0;
+    //     incomes.forEach((income) =>{
+    //         totalIncome = totalIncome + income.amount;
+    //     })
+
+    //     return totalIncome;
+    // }
+
+    
     
     return (
         <globalContext.Provider value={{
-            addIncome
+            addIncome,
+            getIncomes,
+            incomes,
+            // deleteIncome
         }}>
             {children}
         </globalContext.Provider>
