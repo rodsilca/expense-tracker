@@ -3,6 +3,7 @@ import styled from 'styled-components'
 // import { dateFormat } from '../../utils/dateFormat';
 import { bitcoin, book, calender, card, circle, clothing, comment, dollar, food, freelance, medical, money, piggy, stocks, takeaway, trash, tv, users, yt } from '../../utils/icons.js';
 import Button from '../Button/Button';
+import { dateFormat } from '../../utils/dateFormat.js';
 
 function IncomeItem({
     id,
@@ -74,7 +75,7 @@ function IncomeItem({
                 <div className="inner-content">
                     <div className="text">
                         <p>{dollar} {amount}</p>
-                        <p>{calender} {date}</p>
+                        <p>{calender} {dateFormat(date)}</p>
                         <p>
                             {comment}
                             {description}
@@ -89,6 +90,7 @@ function IncomeItem({
                             color={'#fff'}
                             iColor={'#fff'}
                             hColor={'var(--color-green)'}
+                            onClick={() => deleteItem(id)}
                         />
                     </div>
                 </div>

@@ -6,16 +6,17 @@ import { useEffect } from "react"
 import IncomeItem from "../IncomeItem/IncomeItem"
 
 function Incomes(){
-    const {addIcome, incomes, getIncomes}= useGlobalContext()
+    const {addIcome, incomes, getIncomes, deleteIncome, totalIncome}= useGlobalContext();
 
     useEffect(() =>{
         getIncomes();
-    }, [incomes])
+    }, [])
 
     return (
         <IncomesStyled>
             <InnerLayout>
                 <h1>Incomes</h1>     
+                <h2 className="total-income">Total Income: <span>${totalIncome()} </span></h2>
                 <div className="income-content">
                     <div className="form-container">
                         <Form/>
@@ -33,6 +34,7 @@ function Incomes(){
                                 type={type}
                                 category={category} 
                                 indicatorColor="var(--color-green)"
+                                deleteItem={deleteIncome}
                                 
                             />
                         })}
@@ -70,7 +72,7 @@ const IncomesStyled = styled.div`
         .incomes{
             flex: 1;
         }
-    }
+    } 
 `
 
 export default Incomes
