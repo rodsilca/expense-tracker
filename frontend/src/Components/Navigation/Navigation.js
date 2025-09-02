@@ -9,8 +9,7 @@ function Navigation({active, setActive}){
             <div className="user-con">
                 <img src={avatar} alt=""/>
                 <div className="text">
-                    <h1>Mike</h1>
-                    <p>Seu dinheiro</p>
+                    <h1>Rods</h1>
                 </div>
             </div>
 

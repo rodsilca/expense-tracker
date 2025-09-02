@@ -8,7 +8,7 @@ import { plus } from "../../utils/icons";
 
 function ExpenseForm(){
 
-    const {addExpense}  = useGlobalContext();
+    const {error,addExpense}  = useGlobalContext();
 
     const [inputState, setInputState] = useState({
         title: '',
@@ -40,6 +40,7 @@ function ExpenseForm(){
 
     return (
         <ExpenseFormStyled onSubmit={handleSubmit}>
+            {error && <p className="error">{error}</p>}
             <div className="input-control">
                 <input type="text" value={title}
                     name={'title'}
@@ -80,7 +81,7 @@ function ExpenseForm(){
             </div>
 
             <div className="input-control">
-                <textarea name="description" value={description} placeholder='Add A Reference' id="description" cols="30" rows="4" onChange={handleInput('description')}></textarea>
+                <textarea name="description" value={description} placeholder='Add a description' id="description" cols="30" rows="4" onChange={handleInput('description')}></textarea>
             </div>
              
             <div className="submit-btn">
