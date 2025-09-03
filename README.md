@@ -1,4 +1,4 @@
-# 💰 Finance Tracker
+# 💰 Expense Tracker
 
 Este é um projeto de **controle financeiro pessoal**, onde você pode visualizar seus **ganhos e gastos**, além de **adicionar** e **deletar** novas transações de forma simples e intuitiva.  
 
