@@ -18,13 +18,13 @@ O objetivo é oferecer uma visão clara do seu saldo, histórico e evolução fi
 ## 📸 Imagens do Projeto
 
 ### Dashboard
-![Dashboard](./Captura%20de%20tela%202025-09-02%20202558.png)
+<img width="1919" height="950" alt="Image" src="https://github.com/user-attachments/assets/ff31b934-d59f-4487-a1ce-f6ba46157721" />
 
 ### Incomes
-![Incomes](./Captura%20de%20tela%202025-09-02%20202610.png)
+<img width="1919" height="947" alt="Image" src="https://github.com/user-attachments/assets/00aa2085-c7b3-4422-a04a-3f6ba51bdb08" />
 
 ### Expenses
-![Expenses](./Captura%20de%20tela%202025-09-02%20202621.png)
+<img width="1919" height="947" alt="Image" src="https://github.com/user-attachments/assets/fd10b0b5-fd5a-42e0-93c4-fc83ee37ab15" />
 
 ---
 
